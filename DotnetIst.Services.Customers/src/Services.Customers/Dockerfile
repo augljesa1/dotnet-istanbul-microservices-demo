@@ -8,7 +8,7 @@ WORKDIR /src
 COPY ["DotnetIst.Services.Customers/src/Services.Customers/Services.Customers.csproj", "DotnetIst.Services.Customers/src/Services.Customers"]
 RUN dotnet restore "DotnetIst.Services.Customers/src/Services.Customers/Services.Customers.csproj"
 COPY . .
-WORKDIR "/src/DotnetIst.Services.Customers/src/Services.Customers/Services.Customers"
+WORKDIR "/src/DotnetIst.Services.Customers/src/Services.Customers"
 RUN dotnet build "UsersService.csproj" -c Release -o /app/build
 
 FROM build AS publish
